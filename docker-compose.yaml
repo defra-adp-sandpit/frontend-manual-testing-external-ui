@@ -1,0 +1,10 @@
+services:
+  ? frontend-manual-testing-external-ui
+  : build:
+      context: .
+      target: production
+    image: frontend-manual-testing-external-ui
+    container_name: frontend-manual-testing-external-ui
+    environment:
+      APPINSIGHTS_CLOUDROLE: frontend-manual-testing-external-ui-local
+      APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
